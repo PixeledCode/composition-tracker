@@ -5,11 +5,20 @@ interface Measurement {
   bodyFat: number;
   bmi: number;
   weight: number;
+  date: string;
 }
 
 interface StatsCardsProps {
   measurement?: Measurement;
 }
+
+const formatDate = (dateString: string) => {
+  return new Date(dateString).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+};
 
 export function StatsCards({ measurement }: StatsCardsProps) {
   const getBodyFatCategory = (bodyFat: number, gender = "male") => {
@@ -117,7 +126,9 @@ export function StatsCards({ measurement }: StatsCardsProps) {
           <div className="text-2xl font-bold">
             {measurement.weight.toFixed(1)} kg
           </div>
-          <p className="text-xs text-muted-foreground">Latest measurement</p>
+          <p className="text-xs text-muted-foreground">
+            Last measurement on {formatDate(measurement.date)}
+          </p>
         </CardContent>
       </Card>
     </div>

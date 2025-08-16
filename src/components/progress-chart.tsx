@@ -118,7 +118,7 @@ export function ProgressChart({ measurements }: ProgressChartProps) {
             <CardDescription>Weight changes over time</CardDescription>
           </CardHeader>
           <CardContent>
-            <ChartContainer config={chartConfig} className="h-48">
+            <ChartContainer config={chartConfig} className="h-48 w-full">
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={chartData}>
                   <XAxis
@@ -152,7 +152,7 @@ export function ProgressChart({ measurements }: ProgressChartProps) {
             <CardDescription>Body Mass Index over time</CardDescription>
           </CardHeader>
           <CardContent>
-            <ChartContainer config={chartConfig} className="h-48">
+            <ChartContainer config={chartConfig} className="h-48 w-full">
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={chartData}>
                   <XAxis
